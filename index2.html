@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elonoids Cricket Team</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    nav {
+      background-color: #444;
+      padding: 10px;
+      text-align: center;
+    }
+    nav button {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    nav button.active {
+      background-color: #666;
+    }
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Elonoids Cricket Team</h1>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" onclick="toggleSection('home')">Home</button>
+    <button class="nav-btn" onclick="toggleSection('about')">About</button>
+    <button class="nav-btn" onclick="toggleSection('players')">Players</button>
+    <button class="nav-btn" onclick="toggleSection('schedule')">Schedule</button>
+    <button class="nav-btn" onclick="toggleSection('contact')">Contact</button>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Elonoids Cricket Team</h2>
+    <p>Welcome to the official website of Elonoids Cricket Team. We are a passionate team dedicated to the game of cricket.</p>
+  </section>
+
+  <section id="about" style="display: none;">
+    <h2>About Us</h2>
+    <p>The Elonoids Cricket Team was founded in 2020 with the aim of promoting cricket and providing opportunities for talented players in our community.</p>
+  </section>
+
+  <section id="players" style="display: none;">
+    <h2>Our Players</h2>
+    <ul>
+      <li>Bravish(C)</li>
+      <li>Ashish(BAT)</li>
+      <li>Yashwanth(BAT)</li>
+      <li>Sai krishnam raj(ALL)</li>
+      <li>Shiva jilla(PACE)</li>
+      <li>Balu mahendra(ALL)</li>
+      <li>Abhishek(WK)</li>
+      <li>Rakesh(ALL)</li>
+      <li>Rahul(ALL)</li>
+      <li>Mahava rao(BAT)</li>
+      <li>Ram mr(SPIN)</li>
+      <li>Rams reddy(BAT)</li>
+      <li>Ajay (PACE)</li>   
+       <!-- Add more players as needed -->
+    </ul>
+  </section>
+
+  <section id="schedule" style="display: none;">
+    <h2>Match Schedule</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Opponent</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>March 24 2024</td>
+          <td>Begumpet Risers</td>
+          <td>Finecab</td>
+        </tr>
+        <!-- <tr>
+          <td>April 8, 2024</td>
+          <td>Opponent 2</td>
+          <td>Stadium 2</td>
+        </tr> -->
+        <!-- Add more matches as needed -->
+      </tbody>
+    </table>
+  </section>
+
+  <section id="contact" style="display: none;">
+    <h2>Contact Us</h2>
+    <p>If you have any inquiries or would like to get in touch with us, please fill out the form below:</p>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Elonoids Cricket Team. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleSection(sectionId) {
+      // Hide all sections
+      var sections = document.getElementsByTagName('section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = 'none';
+      }
+
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+
+      // Toggle active class for buttons
+      var buttons = document.getElementsByClassName('nav-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+      document.querySelector('button[href="#' + sectionId + '"]').classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
